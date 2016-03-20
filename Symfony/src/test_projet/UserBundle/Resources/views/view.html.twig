@@ -1,0 +1,40 @@
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block title %} Projet {% endblock %}
+
+
+ {%block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <title>qTip extension</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+{%endblock%}
+{%block body%}
+
+	<ul class="record_actions">
+		<li><a href="">Ajouter une tâche</a></li>
+	</ul>
+	<table class="records_list">
+	<tr>
+	<th>Nom</th>
+	<th>Descriptif</th>
+	<th>Fichiers</th>
+	<th>Dernière modification</th>
+	<th>Validée</th>
+	<th>Editer</th>
+	</tr>
+	{% for task in taches %}
+	<tr {% if task.checked %}class="completed"{% endif %}>
+	<td>{{ task.nom }}</td>
+	<td>{{ task.desctxt }}</td>
+	<td>{% if task.descfile != null %}{{ task.descfile}}{% else %}Vide{% endif %}</td>
+	<td>{{ task.dateDerModif|date('d/m/Y') }}</td>
+	<td>{% if task.Checked %}yes{% else %}no{% endif %}</td>
+	<td><a href=" ">edit</a></td>
+	</tr>
+	{% else %}
+	<tr><td colspan="5">Pas de taches en cours.</td></tr>
+	{% endfor %}
+	</table>
+
+{% endblock %}

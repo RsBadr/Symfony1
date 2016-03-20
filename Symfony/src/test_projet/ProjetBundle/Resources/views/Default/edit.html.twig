@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+{% block title %} Projet {% endblock %}
+
+
+ {%block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <title>Edition de project</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    {% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('bundles/projet/css/editCSS/style.css')}}"/>
+    <link rel="stylesheet" href="{{asset('bundles/projet/css/editCSS/action.css')}}"/>	
+    {% endblock %}
+{%endblock%}
+{%block body%}
+     <div id="ongletProjet">
+        <h1>Faire le tour du monde</h1>
+        <div id="toolboxProjet">
+          <button id="saveProjet"><img src="{{asset('bundles/projet/img/imgEdit/valider.svg')}}"/></button>
+          <button id="back"><img src="{{asset('bundles/projet/img/imgEdit/back.svg')}}"/></button>
+          <button id="deleteProjet"><img src="{{asset('bundles/projet/img/imgEdit/delete.svg')}}"/></button>
+        </div>
+      </div>
+      
+    <main>
+      <div id="vueProjet">
+        <img src="{{asset('bundles/projet/img/imgEdit/projet.svg')}}"/>
+        <h2></h2>
+        <h3>Objectif du projet</h3>
+        <div class="content">
+          <ul class="children"></ul>
+        </div>
+      </div>
+      <section>
+         <h2>Considérons l'objectif <span id="nameGoal">Faire le tour du monde</span> :</h2>
+         <aside id="description">
+          J'ai 2 mois pour voir le plus de choses possibles ; 2 mois, c'est rien ! Il va falloir que je me dépeche !
+         </aside>
+          <div id="action">
+            <!--
+            <option id="trash"><img src="{{asset('bundles/projet/img/imgEdit/trash.svg')}}"><span>Supprimer</span></option>
+            <option id="add"><img src="{{asset('bundles/projet/img/imgEdit/addGoal.svg')}}"><span>Ajouter sous objectif</span></option>
+            <option id="editName" class='selected'><img src=""{{asset('bundles/projet/img/imgEdit/edit.svg')}}"><span>Changer le nom</span></option>
+            <option id="editDesc"><img src="{{asset('bundles/projet/img/imgEdit/edit.svg')}}"><span>Changer la description</span></option>
+          -->
+        </div>
+        <div id="workbench"></div>
+      </section>
+    </main>
+{% block javascripts %}
+    <script>
+        var editImg = "{{asset('bundles/projet/img/imgEdit/edit.svg')}}";
+        var addGoal = "{{asset('bundles/projet/img/imgEdit/addGoal.svg')}}";
+        var addTask = "{{asset('bundles/projet/img/imgEdit/addTask.svg')}}";
+        var valider = "{{asset('bundles/projet/img/imgEdit/valider.svg')}}";
+        var trash = "{{asset('bundles/projet/img/imgEdit/trash.svg')}}";
+        var goal = "{{asset('bundles/projet/img/imgEdit/goal.svg')}}";
+        var task = "{{asset('bundles/projet/img/imgEdit/task.svg')}}";
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="{{asset('bundles/projet/js/editJS/metier.js')}}"></script>
+    <script src="{{asset('bundles/projet/js/editJS/controller.js')}}"></script>
+    <script src="{{asset('bundles/projet/js/editJS/vue.js')}}"></script>
+    <script src="{{asset('bundles/projet/js/editJS/code.js')}}"></script>
+    <script src="{{asset('bundles/projet/js/editJS/action.js')}}"></script>
+ {% endblock %}   
+
+{%endblock%}
+

@@ -1,0 +1,53 @@
+#action {
+	margin: auto;
+	margin-top: 2%;
+    display: flex;
+    width: 30%;
+    height: 80px;    
+}
+
+#action > option {
+	flex:1 1 0%;
+	align-self: flex-end;
+
+	border-radius: 5px;
+
+	height: 40%;
+	display: block;
+}
+
+#action option:hover {
+	border: 2px solid rgba(255,180,0, 0.6);
+	border-radius: 5px;
+}
+
+option > span {
+	display: none;
+}
+option > img {
+	height: 85%;
+	width: 100%;
+	min-width: 32px;
+	margin: auto;
+}
+
+option.selected > span {
+
+	display: block;
+	height: 10%;
+	text-align: center;
+	color:gray;
+	font-size: 1em;
+	font-family: Avantgarde, serif;
+}
+
+#action > option.selected {
+	height: 100%;
+	flex:0 1 30%;
+	align-self: stretch;
+	padding: 8px;
+}
+
+#action > option + option {
+    margin-left: 2%;
+}

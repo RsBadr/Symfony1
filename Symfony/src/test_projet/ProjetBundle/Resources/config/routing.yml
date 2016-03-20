@@ -1,0 +1,7 @@
+addProjet:
+    path:     /addProjet
+    defaults: { _controller: ProjetBundle:Default:index }
+
+editProjet:
+    path:     /editProjet
+    defaults: { _controller: ProjetBundle:Default:edit }
